@@ -1,8 +1,111 @@
-/* Write your styles */
 
-/* 广告页面样式表 *／
+.am-titlebar-default .am-titlebar-title {
+    position: relative;
+    padding-left: 12px;
+    color: #f37b1d;
+    font-size: 1.8rem;
+    text-align: left;
+    font-weight: 700;
+}
 
 
+.am-titlebar-default .am-titlebar-title:before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    bottom: 8px;
+    border-left: 3px solid #f37b1d;
+}
+.am-header-default {
+    background-color: #f37b1d;
+}
+.am-list-news-default .am-list>li {
+    border-color: #dedede;
+    padding: 10px;
+}
+p ,.p14{
+
+    font-size: 1.4rem;
+}
+
+.am-titlebar-multi .am-titlebar-title {
+    padding-left: 10px;
+    color: #f37b1d;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 42px;
+    width: 100%;
+}
+
+.am-titlebar-multi {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #f5f5f5;
+    border-top: 2px solid #f37b1d;
+    border-bottom: 1px solid #e8e8e8;
+}
 
 
-/* 警告页面样式表 *／
+#accordion3 input[type='radio']{
+    display:none;
+}
+#accordion3{
+    border-top:none;
+    width:100%;
+    margin:0 auto;
+    padding-left: 0em;
+}
+#accordion3 label{
+    display:block;
+    font-size:16px;
+    background-color:#F4F4F4;
+    border-top:1px solid #D2D2D2;
+    line-height:36px;
+    font-weight:bold;
+}
+#accordion3 label:before{
+    content:"\2722";
+    background-color:#fff;
+    width:19px;
+    height:19px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    text-align:center;
+    margin:0 5px;
+    box-shadow:0 0 1px rgba(0,0,0,0.5);
+    display:inline-block;*display:inline;*zoom:1;
+    line-height:19px;
+    vertical-align:middle;
+    font-size: 1rem;
+}
+#accordion3 .accordion-content{
+    height:0;
+    overflow:hidden;
+    -webkit-transition:height 0.3s ease;
+    -moz-transition:height 0.3s ease;
+    -ms-transition:height 0.3s ease;
+    -o-transition:height 0.3s ease;
+    transition:height 0.3s ease;
+}
+#accordion3 .accordion-content p{
+    margin:10px;
+}
+#accordion3 input:checked + label:before{
+    content:"\2799";
+    color:#f00;
+    box-shadow:0 0 2 px rgba(255,0,0,0.5);
+    font-size: 1rem;
+}
+#accordion3 input:checked ~ .accordion-content{
+     height:240px;
+ }
+@media only screen and (min-width:641px) {
+    #accordion3 input:checked ~ .accordion-content {
+        height: 160px;
+    }
+}
