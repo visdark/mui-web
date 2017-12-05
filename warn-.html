@@ -9,7 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-
+  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css">
+  <link rel="stylesheet" href="assets/css/app.css">
   <style type="text/css">
     *, *:before, *:after {
       -webkit-box-sizing: border-box;
@@ -73,15 +74,16 @@
       font-weight: 700;
     }
 
-    h3 {
-      display: block;
-      font-size: 1.17em;
-      -webkit-margin-before: 1em;
-      -webkit-margin-after: 1em;
-      -webkit-margin-start: 0px;
-      -webkit-margin-end: 0px;
-      font-weight: bold;
-      padding: 0 1rem;
+    .am-titlebar-default {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: transparent;
+      border-bottom: 1px solid #dedede;
+      line-height: 44px;
     }
     p{
       padding: 0 1rem 1rem 1rem;
@@ -148,6 +150,9 @@
       border-color: #dedede;
       padding: 10px;
     }
+    ul{
+      -webkit-padding-start: 0px;
+    }
 
 
     .am-list > li {
@@ -177,6 +182,8 @@
     .am-text-center {
       text-align: center !important;
     }
+
+
     * + .am-alert {
       margin-top: 1em;
     }
@@ -194,6 +201,7 @@
       border-color: #d83832;
       color: #fff;
     }
+
   </style>
 </head>
 <body>
@@ -215,7 +223,7 @@
       <h3>尊敬的客户：</h3>
       <p>外汇保证金交易存在高风险，可能不适合每一位投资者。使用本软件订立任何外汇保证金交易和差价合约前，请您务必谨慎考虑您的目标、 财务状况、需求和经验水平。外汇保证金和差价合约杠杆的作用是放大您的盈利和损失，在正式交易前请确保您完全理解存在的风险，包括本金亏损可能远高于您最初的投入，如无法承担损失,请不要贸然投资。在您决定使用我们的服务前请仔细阅读我们的交易风险说明书并充分理解了“买卖自负”的原则，自行承担交易结果。</p>
       <div class="am-alert am-alert-danger" data-am-alert>
-        考虑是否使用本软件进行外汇保证金交易时，应当明确以下几点：
+        <p>考虑是否使用本软件进行外汇保证金交易时，应当明确以下几点：</p>
       </div>
       <ul class="p14">
         <li>您必须认真阅读并遵守外汇交易公司的业务规则，如果您无法满足外汇交易所和外汇公司业务规则规定的要求，您所持有的未平仓合约将可能根据有关规则被强行平仓，您必须承担由此产生的后果。</li>

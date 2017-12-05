@@ -9,9 +9,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
+
+    <style type="text/css">
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            min-height: 100%;
+
+        }
+        body {
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: "liga", "kern";
+            position: relative;
+            background: #fff;
+            font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei
+            font-weight: normal;
+            line-height: 1.6;
+            color: #333333;
+            font-size: 1.6rem;
+            margin: 0;
+            min-height: 100%;
+        }
+        #accordion3 input[type='radio']{
+    display:none;
+    }
+    #accordion3{
+    border-top:none;
+    width:100%;
+    margin:0 auto;
+    padding-left: 0em;
+    }
+    #accordion3 label{
+    display:block;
+    font-size:16px;
+    background-color:#F4F4F4;
+    border-top:1px solid #D2D2D2;
+    line-height:36px;
+    font-weight:bold;
+    }
+    #accordion3 label:before{
+    content:"\25BC";
+    /*background-color:#fff;*/
+    width:19px;
+    height:19px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    text-align:center;
+    margin:0 5px;
+    /*box-shadow:0 0 1px rgba(0,0,0,0.5);*/
+    display:inline-block;*display:inline;*zoom:1;
+    line-height:19px;
+    vertical-align:middle;
+    font-size: 1rem;
+    }
+    #accordion3 .accordion-content{
+    height:0;
+    overflow:hidden;
+    -webkit-transition:height 0.3s ease;
+    -moz-transition:height 0.3s ease;
+    -ms-transition:height 0.3s ease;
+    -o-transition:height 0.3s ease;
+    transition:height 0.3s ease;
+    }
+    #accordion3 .accordion-content p{
+    margin:10px;
+    }
+    #accordion3 input:checked + label:before{
+    content:"\25B2";
+    color:#f00;
+    box-shadow:0 0 2 px rgba(255,0,0,0.5);
+    font-size: 1rem;
+    }
+    #accordion3 input:checked ~ .accordion-content{
+    height:240px;
+    }
+    @media only screen and (min-width:641px) {
+    #accordion3 input:checked ~ .accordion-content {
+    height: 160px;
+    }
+    }
+        p {
+            font-size: 1.4rem;
+        }
+    </style>
 </head>
 <body>
 

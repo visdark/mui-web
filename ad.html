@@ -1,201 +1,328 @@
 <!doctype html>
 <html class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>移动页面基本模版</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="icon" type="image/png" href="assets/i/favicon.png">
-  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
-  <link rel="stylesheet" href="assets/css/app.css">
-</head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>移动页面基本模版</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css">-->
+
+    <style type="text/css">
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            min-height: 100%;
+
+        }
+        body {
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: "liga", "kern";
+            position: relative;
+            background: #fff;
+            font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+            font-weight: normal;
+            line-height: 1.6;
+            color: #333333;
+            font-size: 1.6rem;
+            margin: 0;
+            min-height: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 1.6rem 0;
+            font-weight: 600;
+            font-size: 100%;
+        }
+        h2 {
+            font-size: 1.25em;
+        }
+        .am-titlebar h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1.6rem;
+        }
+        .am-titlebar-default .am-titlebar-title {
+            position: relative;
+            padding-left: 12px;
+            color: #0e90d2;
+            font-size: 1.8rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .am-titlebar-default .am-titlebar-title {
+            position: relative;
+            padding-left: 12px;
+            color: #f37b1d;
+            font-size: 1.8rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .am-titlebar-default {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: transparent;
+            border-bottom: 1px solid #dedede;
+            line-height: 44px;
+        }
+p{
+    padding: 0 1rem 1rem 1rem;
+    text-align: justify !important;
+
+}
+
+
+
+
+
+
+
+
+        .am-titlebar-default .am-titlebar-title {
+            position: relative;
+            padding-left: 12px;
+            color: #f37b1d;
+            font-size: 1.8rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+
+        .am-titlebar-default .am-titlebar-title:before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 8px;
+            bottom: 8px;
+            border-left: 3px solid #f37b1d;
+        }
+
+        .am-list-news-default .am-list>li {
+            border-color: #dedede;
+            padding: 10px;
+        }
+        p ,.p14{
+
+            font-size: 1.4rem;
+        }
+
+        .am-titlebar-multi .am-titlebar-title {
+            padding-left: 10px;
+            color: #f37b1d;
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: 700;
+            line-height: 42px;
+            width: 100%;
+        }
+
+        .am-g{
+            display: flex;
+        }
+
+        .am-u-sm-3{
+            width: 25%;
+            float: left;
+            text-align: center;
+        }
+        .am-u-sm-3 img{
+            padding: .5rem;
+        }
+
+        .am-u-sm-9{
+            width: 75%;
+            float: right;
+        }
+        .am-list-news-default .am-list>li {
+            border-color: #dedede;
+            padding: 10px;
+        }
+ul{
+    -webkit-padding-start: 0px;
+}
+        .am-list-news{
+            margin: 0 1rem;
+        }
+        .am-list > li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border-width: 1px 0;
+        }
+        </style>
+        </head>
 <body>
-<!-- 头部 -->
-<header data-am-widget="header" class="am-header am-header-default">
-  <h1 class="am-header-title">
-    <a href="#title-link">点点汇</a>
-  </h1>
-</header>
 
 
-<!-- 焦点图位置 -->
-<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
-  <ul class="am-slides">
-    <li>
-      <img src="assets/i/bing-1.jpg">
-    </li>
-    <li>
-      <img src="assets/i/bing-2.jpg">
-    </li>
-  </ul>
-</div>
+
+
 
 
 <!-- 公司简介 -->
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
-  <h2 class="am-titlebar-title ">
-    点点汇交易
-  </h2>
+    <h2 class="am-titlebar-title ">
+        点点汇交易
+    </h2>
 </div>
 <div class="am-g">
-  <div class="am-u-sm-12 am-text-justify">
+    <div class="am-u-sm-12 am-text-justify">
 
 
 
-    <div class="am-padding-vertical-sm">
-      <p>点点汇是与新西兰持牌16年的大型老牌券商FXBTG联合开发的原生移动端外汇交易软件，提供外汇，贵金属等全球投资产品的交易服务。</p>
-    <p>FXBTG大旗金融集团是专业从事外汇、黄金以及股指期货等金融产品交易的全球外汇交易所，总部位于新西兰，在美国、澳大利亚、伦敦拥有全资子公司。FXBTG注册牌照为FSP 319786，受新西兰政府的严格监管，保证用户资金安全，致力于提供点差更低，系统更稳定，品种更丰富的交易体验。FXBTG作为新西兰FDR（Financial Dispute Resolution）的认证成员，每位客户将获得高达20万新西兰元的资金保障。</p></div>
+        <div class="am-padding-vertical-sm">
+            <p>点点汇是与新西兰持牌16年的大型老牌券商FXBTG联合开发的原生移动端外汇交易软件，提供外汇，贵金属等全球投资产品的交易服务。</p>
+            <p>FXBTG大旗金融集团是专业从事外汇、黄金以及股指期货等金融产品交易的全球外汇交易所，总部位于新西兰，在美国、澳大利亚、伦敦拥有全资子公司。FXBTG注册牌照为FSP 319786，受新西兰政府的严格监管，保证用户资金安全，致力于提供点差更低，系统更稳定，品种更丰富的交易体验。FXBTG作为新西兰FDR（Financial Dispute Resolution）的认证成员，每位客户将获得高达20万新西兰元的资金保障。</p></div>
 
 
 
-  </div>
+    </div>
 </div>
 
 <!-- 我们的优势 -->
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
-  <h2 class="am-titlebar-title ">
-    我们的优势
-  </h2>
+    <h2 class="am-titlebar-title ">
+        我们的优势
+    </h2>
 </div>
-<ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
-  am-gallery-default" data-am-gallery="{ pureview: true }">
-  <li>
-    <div class="am-gallery-item">
 
-        <img src="assets/i/bing-3.jpg"
-             alt="" />
-
-
-    </div>
-  </li>
-  <li>
-    <div class="am-gallery-item">
-
-        <img src="assets/i/bing-4.jpg"
-             alt="" />
-
-    </div>
-  </li>
-</ul>
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
-  <div class="am-list-news-bd">
-    <ul class="am-list">
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 高透明度即时报价
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 24小时交易市场让投资者交易策略更加灵活
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 免费图表分析时时掌握动态
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 无隐藏交易费用
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 新西兰牌照监督多层安全保障系统给您安心体验
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 世界顶级银行承诺资金安全
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 市场中有竞争力的浮动点差
-      </li>
-      <li class="am-g">
-        <i class="am-icon-dot-circle-o am-icon-fw"></i> 微信短信邮件及时高风险提示，为您保驾护航
-      </li>
-    </ul>
-  </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 高透明度即时报价
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 24小时交易市场让投资者交易策略更加灵活
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 免费图表分析时时掌握动态
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 无隐藏交易费用
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 新西兰牌照监督多层安全保障系统给您安心体验
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 世界顶级银行承诺资金安全
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 市场中有竞争力的浮动点差
+            </li>
+            <li class="am-g">
+                <i class="am-icon-dot-circle-o am-icon-fw"></i> 微信短信邮件及时高风险提示，为您保驾护航
+            </li>
+        </ul>
+    </div>
 </div>
 
 
 <!-- 公司理念 -->
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
-  <h2 class="am-titlebar-title ">
-    公司理念
-  </h2>
+    <h2 class="am-titlebar-title ">
+        公司理念
+    </h2>
 </div>
 
 <div class="am-g">
-  <div class="am-u-sm-12 am-text-justify">
+    <div class="am-u-sm-12 am-text-justify">
 
 
 
-    <div class="am-padding-vertical-sm">
-    <div class="vis-1">
-      <div class="am-g">
-        <div class=" am-u-sm-3 am-u-md-2 am-text-center">
-          <img src="assets/i/icon-1.png" alt="" style="width: 100%; height: auto"/>
+        <div class="am-padding-vertical-sm">
+            <div class="vis-1">
+                <div class="am-g">
+                    <div class=" am-u-sm-3 am-u-md-2 am-text-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkJDNkIzRjRDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkJDNkIzRjVDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGQkM2QjNGMkNEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGQkM2QjNGM0NEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuzE8RgAAA/PSURBVHja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" alt="" style="width: 100%; height: auto; max-width: 100px"/>
 
-          <figcaption class="am-figure-capition-btm">
-          <h3>诚信</h3>
-        </figcaption>
+                        <figcaption class="am-figure-capition-btm">
+                            <h3>诚信</h3>
+                        </figcaption>
+                    </div>
+                    <div class="am-u-sm-9 am-u-md-10 am-text-justify">
+                        <p>诚信一直是我们不断进步和持续得到更多投资者信赖的驱动力。我们的目标旨在全球，我们要成为更多投资人信赖的企业。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vis-1">
+                <div class="am-g">
+                    <div class="am-u-sm-3 am-u-md-2 am-text-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjJEQUNEODRDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjJEQUNEODVDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MkRBQ0Q4MkNEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MkRBQ0Q4M0NEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PornRRcAAAwPSURBVHja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" alt="" style="width: 100%; height: auto; max-width: 100px"/>
+
+                        <figcaption class="am-figure-capition-btm">
+                            <h3>专业</h3>
+                        </figcaption>
+                    </div>
+                    <div class="am-u-sm-9 am-u-md-10 am-text-justify">
+                        <p>团队成员来自腾讯，百度，平安，拥有互联网+金融双背景，注重风险控制，把握投资者需求，为投资者提供多样化的海外金融渠道。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vis-1">
+                <div class="am-g">
+                    <div class="am-u-sm-3 am-u-md-2 am-text-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTMxQkE5RkZDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTMxQkFBMDBDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMzFCQTlGRENEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMzFCQTlGRUNEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PseNPigAAAuiSURBVHja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" alt="" style="width: 100%; height: auto
+                        ;max-width: 100px"/>
+
+                        <figcaption class="am-figure-capition-btm">
+                            <h3>创新</h3>
+                        </figcaption>
+                    </div>
+                    <div class="am-u-sm-9 am-u-md-10 am-text-justify">
+                        <p>以互联网金融企业作为企业定位，紧跟现代科技步伐，采用最先进的程式和交易软件，为全球客户提供快捷，方便的金融体验。 让个人投资更容易参与交易是我们一直追寻的使命，我们通过降低点差和交易佣金优化交易成本。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vis-1">
+                <div class="am-g">
+                    <div class="am-u-sm-3 am-u-md-2 am-text-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTMxQkE5RkJDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTMxQkE5RkNDREI3MTFFN0FDN0VCNzA4ODU1OTVERDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMzFCQTlGOUNEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMzFCQTlGQUNEQjcxMUU3QUM3RUI3MDg4NTU5NURENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjSPS/EAAAnoSURBVHja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" alt="" style="width: 100%; height: auto; max-width: 100px"/>
+
+                        <figcaption class="am-figure-capition-btm">
+                            <h3>优势</h3>
+                        </figcaption>
+                    </div>
+                    <div class="am-u-sm-9 am-u-md-10 am-text-justify">
+                        <p>放心保障：STP直通国际市场；审核严谨，保障客户；监管严格，放心尽责；交易公平，公开公正。客户隐私信息严格保密。 资金管理：无缝衔接行业主流交易工具：MT4。入金即时到账，取款一到两个工作日到账；完善的资金保障体系。</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
         </div>
-        <div class="am-u-sm-9 am-u-md-10 am-text-justify">
-          <p>诚信一直是我们不断进步和持续得到更多投资者信赖的驱动力。我们的目标旨在全球，我们要成为更多投资人信赖的企业。</p>
-        </div>
-        </div>
+
+
+
     </div>
-      <div class="vis-1">
-        <div class="am-g">
-          <div class="am-u-sm-3 am-u-md-2 am-text-center">
-            <img src="assets/i/icon-2.png" alt="" style="width: 100%; height: auto"/>
-
-            <figcaption class="am-figure-capition-btm">
-              <h3>专业</h3>
-            </figcaption>
-          </div>
-          <div class="am-u-sm-9 am-u-md-10 am-text-justify">
-            <p>团队成员来自腾讯，百度，平安，拥有互联网+金融双背景，注重风险控制，把握投资者需求，为投资者提供多样化的海外金融渠道。</p>
-          </div>
-        </div>
-      </div>
-      <div class="vis-1">
-        <div class="am-g">
-          <div class="am-u-sm-3 am-u-md-2 am-text-center">
-            <img src="assets/i/icon-3.png" alt="" style="width: 100%; height: auto"/>
-
-            <figcaption class="am-figure-capition-btm">
-              <h3>创新</h3>
-            </figcaption>
-          </div>
-          <div class="am-u-sm-9 am-u-md-10 am-text-justify">
-            <p>以互联网金融企业作为企业定位，紧跟现代科技步伐，采用最先进的程式和交易软件，为全球客户提供快捷，方便的金融体验。 让个人投资更容易参与交易是我们一直追寻的使命，我们通过降低点差和交易佣金优化交易成本。</p>
-          </div>
-        </div>
-      </div>
-      <div class="vis-1">
-        <div class="am-g">
-          <div class="am-u-sm-3 am-u-md-2 am-text-center">
-            <img src="assets/i/icon-4.png" alt="" style="width: 100%; height: auto"/>
-
-            <figcaption class="am-figure-capition-btm">
-              <h3>优势</h3>
-            </figcaption>
-          </div>
-          <div class="am-u-sm-9 am-u-md-10 am-text-justify">
-            <p>放心保障：STP直通国际市场；审核严谨，保障客户；监管严格，放心尽责；交易公平，公开公正。客户隐私信息严格保密。 资金管理：无缝衔接行业主流交易工具：MT4。入金即时到账，取款一到两个工作日到账；完善的资金保障体系。</p>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-  </div>
 </div>
 
 
